@@ -1,7 +1,12 @@
 SUMMARY = "provides recipes to use pkcs11 compatible smartcards"
 inherit packagegroup
 
-DEPENDS = "\
+PROVIDES = "${PACKAGES}"
+PACKAGES = ' \
+	   packagegroup-pascal-smartcard \
+	   '
+
+RDEPENDS_packagegroup-pascal-smartcard = "\
     pcsc-lite \
     opensc \    
     libp11 \
