@@ -9,14 +9,14 @@ PACKAGES = ' \
 	   '
 
 SUMMARY_packagegroup-pascal-tpm20-base = "basic tpm2.0 tss stack"
-DEPENDS_packagegroup-pascal-tpm20-base = "\
+RDEPENDS_packagegroup-pascal-tpm20-base = "\
     tpm2-tss \
     tpm2-tools \
     tpm2-tss-engine \
     "
 
 SUMMARY_packagegroup-pascal-tpm20-pkcs11 = "adding pkcs11-recipes for tpm2.0"
-DEPENDS_packagegroup-pascal-tpm20-pkcs11 = "\
+RDEPENDS_packagegroup-pascal-tpm20-pkcs11 = "\
     tpm2-pkcs11 \
     "
 
