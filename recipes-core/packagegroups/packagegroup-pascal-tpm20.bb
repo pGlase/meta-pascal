@@ -10,6 +10,7 @@ PACKAGES = ' \
 
 SUMMARY_packagegroup-pascal-tpm20-base = "basic tpm2.0 tss stack"
 RDEPENDS_packagegroup-pascal-tpm20-base = "\
+    packagegroup-security-tpm2 \    
     tpm2-tss \
     tpm2-tools \
     tpm2-tss-engine \
