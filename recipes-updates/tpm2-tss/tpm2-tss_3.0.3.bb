@@ -1,19 +1,20 @@
 SUMMARY = "Software stack for TPM2."
 DESCRIPTION = "OSS implementation of the TCG TPM2 Software Stack (TSS2) "
+#NOTE: THIS IS NOT THE OFFICIAL YOCTO-RECIPE!
+#in 24/02/2021 
 LICENSE = "BSD-2-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=500b2e742befc3da00684d8a1d5fd9da"
 SECTION = "tpm"
 
-DEPENDS = "autoconf-archive-native libgcrypt openssl"
-
-SRCREV = "a99e733ba66c359502689a9c42fd5e02ed1dd7d6"
+DEPENDS = "autoconf-archive-native openssl json-c curl"
+SRCREV = "472a14f116296210c42686f4f80865e809d96b60"
 
 SRC_URI = "https://github.com/tpm2-software/${BPN}/releases/download/${PV}/${BPN}-${PV}.tar.gz"
-SRC_URI[md5sum] = "fb7e6d371959a65dc6d129af81739742"
-SRC_URI[sha256sum] = "82929a0611f39246e09202702a61b54c980ab694626c1f5823520ddf75024fa6"
-SRC_URI[sha1sum] = "c24ce8b20a8686ada775239389292f6d78020668"
-SRC_URI[sha384sum] = "a0c023c024efb6c9906df1e143d692f44433de332b616dc0584c9b4cd4fb0ad544308f291892e91c5a52ef1a4b2abf7f"
-SRC_URI[sha512sum] = "7b679b54f3478c3adee5b6c3135cbe491ffd9f4712991f465edbd6c7d2831e5f1537038ec36f288e9545c719d5d167b61116c924cf5d816220615d0b58a1d436"
+SRC_URI[md5sum] = "397ba047d5743557b772c8d32e47fce2"
+SRC_URI[sha256sum] = "78392be7309baf47f51b122f566ac915fd4d1760ea78571cba2e1484f9b5be17"
+SRC_URI[sha1sum] = "f83a4a9e544893c42ec108f6616a75e2f209d2d3"
+SRC_URI[sha384sum] = "28a4cf6d8e3c43c7fbc37ca3d56985186dc75353d95e95406cdce15c5914206142fb54daf950722e7c8564b60bb3cd4d"
+SRC_URI[sha512sum] = "54a926db55790250d69c81ac6e436556072057dd7c610d2718689030287dee69d533d4e04b3325dd73d9fc7635dad0bf0a7bfb082957bb51cb420efdb68efaf8"
 
 inherit autotools pkgconfig systemd extrausers
 
@@ -76,6 +77,6 @@ FILES_libtss2-dev = " \
     ${libdir}/libtss2*so"
 FILES_libtss2-staticdev = "${libdir}/libtss*a"
 
-FILES_${PN} = "${libdir}/udev ${base_prefix}/lib/udev"
+FILES_${PN} = "${libdir}/udev ${base_prefix}/lib/udev ${base_prefix}/etc"
 
 RDEPENDS_libtss2 = "libgcrypt"
