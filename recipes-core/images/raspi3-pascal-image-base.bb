@@ -4,12 +4,16 @@ LICENSE = "MIT"
 
 HOSTNAME = "raspi3Pascal"
 hostname_pn-base-files = "raspi3Pascal"
+
 IMAGE_INSTALL_append += "packagegroup-pascal-convenience"
 IMAGE_INSTALL_append += "packagegroup-pascal-smartcard"
 IMAGE_INSTALL_append += "packagegroup-pascal-tpm20-base"
 IMAGE_INSTALL_append += "packagegroup-pascal-tpm20-pkcs11"
 IMAGE_INSTALL_append += "openssh"
+IMAGE_INSTALL_append += "pascal-tpm2"
+
 
 DISTRO_FEATURES_remove = "ipv6"
+
 inherit core-image
 

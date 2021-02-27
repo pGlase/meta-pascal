@@ -14,6 +14,7 @@ RDEPENDS_packagegroup-pascal-tpm20-base = "\
     tpm2-tss \
     tpm2-tools \
     tpm2-tss-engine \
+    tpm2-abrmd \
     "
 
 SUMMARY_packagegroup-pascal-tpm20-pkcs11 = "adding pkcs11-recipes for tpm2.0"
